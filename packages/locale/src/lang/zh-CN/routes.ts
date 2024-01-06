@@ -24,6 +24,12 @@ export default {
       fixedColumn: '固定列',
       treeTable: '树形表格',
     },
+    scroll: {
+      scroll: '滚动组件',
+      basic: '基础滚动',
+      action: '滚动函数',
+      virtual: '虚拟滚动',
+    },
     modal: '模态框',
     permission: {
       permission: '权限管理',
@@ -68,6 +74,9 @@ export default {
       copy: '剪切板',
       ws: 'websocket测试',
       msg: '消息提示',
+      requestDemo: '测试请求重试',
+      sessionTimeout: '登录过期',
+      icon: '图标',
     },
     page: {
       page: '页面',

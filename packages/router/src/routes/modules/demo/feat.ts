@@ -84,6 +84,30 @@ const feat: RouteRecordItem = {
         title: 'routes.demo.feat.msg',
       },
     },
+    {
+      path: 'request',
+      name: 'RequestDemo',
+      component: () => import('@/pages/demo/feat/request-demo.vue'),
+      meta: {
+        title: 'routes.demo.feat.requestDemo',
+      },
+    },
+    {
+      path: 'session-timeout',
+      name: 'SessionTimeout',
+      component: () => import('@/pages/demo/feat/session-timeout.vue'),
+      meta: {
+        title: 'routes.demo.feat.sessionTimeout',
+      },
+    },
+    {
+      path: 'icon',
+      name: 'IconDemo',
+      component: () => import('@/pages/demo/feat/icon.vue'),
+      meta: {
+        title: 'routes.demo.feat.icon',
+      },
+    },
   ],
 }
 

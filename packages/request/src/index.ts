@@ -71,6 +71,13 @@ const transform: AxiosTransform = {
 
     // @ts-ignore
     context.msgFunction.error(message)
+
+    switch (code) {
+      case ResultEnum.TIMEOUT:
+        context.unauthorizedFunction?.(message)
+        break
+    }
+
     throw new Error(message)
     // 在此处根据自己项目的实际情况对不同的code执行不同的操作
     // 如果不希望中断当前请求，请return数据，否则直接抛出异常即可
@@ -233,7 +240,7 @@ export const createAxios = (opt?: Partial<CreateAxiosOptions>) => {
         authenticationScheme: '',
         timeout: 10 * 1000,
         // 基础接口地址
-        baseURL: '',
+        // baseURL: '',
 
         headers: { 'Content-Type': ContentTypeEnum.JSON },
         // 如果是form-data格式
@@ -283,6 +290,7 @@ export interface ContextOptions {
   msgFunction: AnyFunction<any>
   errorModalFunction: AnyFunction<any>
   noticeFunction: AnyFunction<any>
+  modalFunction: AnyFunction<any>
   getTokenFunction: () => unknown
   unauthorizedFunction: (msg?: string) => void
   timeoutFunction: () => void
@@ -296,6 +304,7 @@ export let context: ContextOptions = {
   errorFunction: () => {},
   msgFunction: () => {},
   noticeFunction: () => {},
+  modalFunction: () => {},
   errorModalFunction: () => {},
   handleErrorFunction: () => {},
   timeoutFunction: () => {},
@@ -304,8 +313,11 @@ export let context: ContextOptions = {
 export const setMsg = (func: AnyFunction<any>) => {
   context.msgFunction = func
 }
-export const setNoice = (func: AnyFunction<any>) => {
+export const setNotice = (func: AnyFunction<any>) => {
   context.noticeFunction = func
+}
+export const setDialog = (func: AnyFunction<any>) => {
+  context.modalFunction = func
 }
 
 // other api url

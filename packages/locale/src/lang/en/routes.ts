@@ -23,6 +23,12 @@ export default {
       basic: 'basic',
       fixedColumn: 'fixedColumn',
     },
+    scroll: {
+      scroll: 'Scroll',
+      basic: 'Basic',
+      action: 'Scroll Function',
+      virtual: 'Virtual Scroll',
+    },
     modal: 'Modal',
     permission: {
       permission: 'Permission',
@@ -67,6 +73,9 @@ export default {
       copy: 'Clipboard',
       ws: 'Websocket test',
       msg: 'Message prompt',
+      requestDemo: 'Retry request demo',
+      sessionTimeout: 'Session Timeout',
+      icon: 'Icon',
     },
     page: {
       page: 'Page',
