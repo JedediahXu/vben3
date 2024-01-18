@@ -18,6 +18,7 @@ export default {
     qrcode: '二维码组件',
     countTo: '数字动画',
     time: '相对时间',
+    cropperImage: '图片裁剪',
     table: {
       table: '表格',
       basic: '基础表格',
@@ -77,6 +78,8 @@ export default {
       requestDemo: '测试请求重试',
       sessionTimeout: '登录过期',
       icon: '图标',
+      contextMenu: '右键菜单',
+      download: '文件下载',
     },
     page: {
       page: '页面',
